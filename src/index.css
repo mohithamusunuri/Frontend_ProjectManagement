@@ -1,0 +1,31 @@
+/* stylelint-disable at-rule-no-unknown */
+/* stylelint-enable at-rule-no-unknown */
+
+:root {
+  /* Keep your nice color variables if you like, but let's simplify for the dashboard */
+  --bg: #f8fafc;
+  --text: #1e293b;
+}
+
+/* 1. Reset the default browser behavior */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 2. Fix the #root container so it doesn't restrict the dashboard width */
+#root {
+  min-height: 100vh;
+  width: 100%; /* Changed from 1126px */
+  display: block; /* Changed from flex-column/center */
+  margin: 0;
+  text-align: left; /* Essential for dashboards */
+}
+
+/* 3. Smooth scrolling for the dashboard */
+html {
+  scroll-behavior: smooth;
+}
