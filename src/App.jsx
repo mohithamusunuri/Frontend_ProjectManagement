@@ -2,7 +2,8 @@ import React, { useState, useMemo } from 'react';
 import axios from 'axios';
 import Auth from './Auth';
 import DashboardLayout from './DashboardLayout';
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API = axios.create({ baseURL: API_BASE_URL });
 
 function App() {
   const [user, setUser] = useState(null); 
@@ -121,7 +122,7 @@ function App() {
         {/* --- 2. PROJECT REGISTRY --- */}
         {activeTab === 'Project Registry' && (
           <div style={styles.flexCol}>
-            <header style={{borderBottom: '2px solid #e11d48', paddingBottom: '10px'}}><h1 style={styles.title}>Project Registry</h1></header>
+            <header style={{borderBottom: '2px solid #e4244d', paddingBottom: '10px'}}><h1 style={styles.title}>Project Registry</h1></header>
             <div style={styles.tableCard}>
                 <table style={styles.table}>
                     <thead style={styles.thRow}><tr><th>Use Case Title</th><th>Status</th><th>Members</th></tr></thead>
