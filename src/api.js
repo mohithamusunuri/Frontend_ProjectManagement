@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const API = axios.create({
-    baseURL: 'http://localhost:8080/api/sdp',
-    timeout: 5000, // 5 second timeout for professional handling
+    baseURL: 'https://backend-production-fce1.up.railway.app/api/sdp',
+    timeout: 5000,
 });
 
 export const fetchStudents = async () => {
@@ -11,7 +11,7 @@ export const fetchStudents = async () => {
         return response.data;
     } catch (error) {
         console.error("API Error:", error.response?.data || error.message);
-        throw error; // Handled by Frontend UI
+        throw error;
     }
 };
 
